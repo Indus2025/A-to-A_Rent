@@ -1,0 +1,377 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AGENT TO AGENT AGREEMENT</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .header img {
+            max-width: 100px;
+        }
+        .header h2 {
+            margin: 10px 0 5px;
+            font-size: 18px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        table th, table td {
+            border: 1px solid #ddd;
+            padding: 16px;
+            text-align: left;
+        }
+        table th {
+            background-color: #f0f0f0;
+        }
+        .section-title {
+            font-weight: bold;
+            text-decoration: underline;
+            margin-top: 20px;
+            margin-bottom: 10px;
+        }
+        .form-control {
+            width: 100%;
+            padding: 6px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .signature-section {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 20px;
+        }
+        .signature-box {
+            width: 45%;
+            text-align: center;
+            border-top: 1px solid #000;
+            padding-top: 10px;
+        }
+        .footer {
+            text-align: center;
+            font-size: 12px;
+            color: #777;
+            margin-top: 20px;
+        }
+        label {
+            margin-right: 20px;
+            cursor: pointer;
+        }
+        input[type="radio"] {
+            margin-right: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="/uploads/indus.png" alt="Indus Real Estate Logo">
+            <h2>Agreement Between Agent to Agent</h2>
+            <h5>As per the Real Estate Brokers By-Law No. (85) of 2006</h5>
+        </div>
+
+        <form method="POST" action="/v1/submit-agreement" enctype="multipart/form-data">
+            <table>
+                <tr>
+                    <th colspan="1">PART 1 - THE PARTIES</th>
+                    <th colspan="1">
+                        <input type="date" name="dated" class="form-control" required>
+                    </th>
+                </tr>
+                
+                <!-- Agent A Section -->
+                <tr>
+                    <th colspan="2">A) THE AGENT / BROKER (LANDLORD'S AGENT)</th>
+                </tr>
+                <tr>
+                    <td>NAME OF THE ESTABLISHMENT:</td>
+                    <td><input type="text" name="agent_a_establishment" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" name="agent_a_address" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Office Contact Details:</th>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td><input type="text" name="agent_a_phone" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>Fax:</td>
+                    <td><input type="text" name="agent_a_fax" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" name="agent_a_email" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>ORN:</td>
+                    <td><input type="text" name="agent_a_orn" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>License No.:</td>
+                    <td><input type="text" name="agent_a_license" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>P.O Box:</td>
+                    <td><input type="text" name="agent_a_po_box" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>Emirates:</td>
+                    <td><input type="text" name="agent_a_emirates" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Registered Agent</th>
+                </tr>
+                <tr>
+                    <td>Registered Agent:</td>
+                    <td><input type="text" name="agent_a_name" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>BRN:</td>
+                    <td><input type="text" name="agent_a_brn" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Date Issued:</td>
+                    <td><input type="date" name="agent_a_date_issued" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Mobile No.:</td>
+                    <td><input type="text" name="agent_a_mobile" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" name="agent_a_email_personal" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <th colspan="2">DECLARATION BY AGENT "A"</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>I hereby declare, I have read and understood the Real Estate Brokers Code of Ethics, I
+                        have a current signed Seller's Agreement FORM A, I shall respond to a reasonable offer
+                        to purchase the listed property from Agent B, and shall not contact Agent B's Buyer nor
+                        confer with their client under no circumstances unless the nominated Buyer herein has
+                        already discussed the stated listed property with our office.</p>
+                    </td>
+                </tr>
+
+                <!-- Agent B Section -->
+                <tr>
+                    <th colspan="2">B) THE AGENT / BROKER (TENANT'S AGENT)</th>
+                </tr>
+                <tr>
+                    <td>NAME OF THE ESTABLISHMENT:</td>
+                    <td><input type="text" name="agent_b_establishment" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>Address:</td>
+                    <td><input type="text" name="agent_b_address" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Office Contact Details:</th>
+                </tr>
+                <tr>
+                    <td>Phone:</td>
+                    <td><input type="text" name="agent_b_phone" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>Fax:</td>
+                    <td><input type="text" name="agent_b_fax" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="text" name="agent_b_email" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>ORN:</td>
+                    <td><input type="text" name="agent_b_orn" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>License No.:</td>
+                    <td><input type="text" name="agent_b_license" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>P.O Box:</td>
+                    <td><input type="text" name="agent_b_po_box" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <td>Emirates:</td>
+                    <td><input type="text" name="agent_b_emirates" class="form-control" value=""></td>
+                </tr>
+                <tr>
+                    <th colspan="2">Registered Agent</th>
+                </tr>
+                <tr>
+                    <td>Registered Agent:</td>
+                    <td><input type="text" name="agent_b_name" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>BRN:</td>
+                    <td><input type="text" name="agent_b_brn" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Date Issued:</td>
+                    <td><input type="date" name="agent_b_date_issued" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Mobile No.:</td>
+                    <td><input type="text" name="agent_b_mobile" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>Email:</td>
+                    <td><input type="email" name="agent_b_email_personal" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <th colspan="2">DECLARATION BY AGENT "B"</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>I hereby declare, I have read and understood the Real Estate Brokers Code of Ethics, I
+                        have a current signed Buyer's Agreement FORM B, I shall encourage my Buyer as
+                        named herein, to submit a reasonable offer for the stated property from Agent A,
+                        and shall not contact Agent A's Seller nor confer with their client under no
+                        circumstances unless the Agent A has delayed our proposal on the prescribed FORM
+                        with a reasonable reply with 24 hours.</p>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th colspan="2">PART 2 - THE PROPERTY</th>
+                </tr>
+                <tr>
+                    <td>PROPERTY ADDRESS:</td>
+                    <td><input type="text" name="property_address" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>MASTER DEVELOPER:</td>
+                    <td><input type="text" name="master_developer" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>MASTER PROJECT NAME:</td>
+                    <td><input type="text" name="master_project" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <th colspan="2">PROPERTY DETAILS</th>
+                </tr>
+                <tr>
+                    <th colspan="2">Landlord's Agent to Complete</th>
+                </tr>
+                <tr>
+                    <td>BUILDING NAME:</td>
+                    <td><input type="text" name="building_name" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>LISTED PRICE:</td>
+                    <td><input type="text" name="listed_price" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>DESCRIPTION:</td>
+                    <td><textarea name="property_description" class="form-control" required></textarea></td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th colspan="2">PART 3 - THE COMMISSION (Split)</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <p>The following commission split is agreed between the Landlord's Agent and Tenant's Agent</p>
+                    </td>
+                </tr>
+                <tr>
+                    <td>LANDLORD'S AGENT %:</td>
+                    <td><input type="text" name="landlord_agent_percent" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>TENANT'S AGENT %:</td>
+                    <td><input type="text" name="tenant_agent_percent" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>TENANT'S NAME (Family Name ONLY):</td>
+                    <td><input type="text" name="tenant_name" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>PASSPORT NO.:</td>
+                    <td><input type="text" name="tenant_passport" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <td>BUDGET:</td>
+                    <td><input type="text" name="tenant_budget" class="form-control" required></td>
+                </tr>
+                <tr>
+                    <th colspan="2">HAS THIS TENANT CONTACTED THE LISTING AGENT?</th>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <label>
+                            <input type="radio" name="tenant_contacted_agent" value="yes" required> YES
+                        </label>
+                        <label>
+                            <input type="radio" name="tenant_contacted_agent" value="no"> NO
+                        </label>
+                    </td>
+                </tr>
+            </table>
+
+            <table>
+                <tr>
+                    <th colspan="2">PART 4 - SIGNATURES</th>
+                </tr>
+            </table>
+
+            <div style="margin-top: 20px; font-weight: bold;">
+                Both Agents are required to co-operate fully, complete this FORM & BOTH retain a fully signed
+                & stamped copy on file. RERA DRS is available to both parties. (Office Stamps "X" above).
+            </div>
+
+            <div style="margin-top: 20px; font-weight: bold;">
+                IN THE EVENT AGENT A DOES NOT RESPOND WITHIN 24 HOURS,
+                AGENT B MUST CONTACT RERA
+            </div>
+            <br><br><br><br>
+            <div class="signature-section">
+                <div class="signature-box">
+                    Agent A
+                </div>
+                <div class="signature-box">
+                    Agent B
+                </div>
+            </div>
+
+            <button type="submit" style="margin-top: 20px; padding: 10px 20px; background-color: #007bff; color: white; border: none; border-radius: 5px;">Submit</button>
+        </form>
+
+        <div class="footer">
+            Contract Code: IRE/F-A/112016RO
+        </div>
+        <div class="text-center">
+            203 Al Sharafi Building | Bur Dubai, Dubai UAE | P.O Box 118163 | Dubai UAE
+        </div>
+    </div>
+</body>
+</html>
