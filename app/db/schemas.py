@@ -54,6 +54,10 @@ class AgentAgreementBase(BaseModel):
     tenant_budget: str
     tenant_contacted_agent: bool
 
+    # Signature
+    agent_a_signature: str
+    agent_b_signature: str
+
 class AgentAgreementCreate(AgentAgreementBase):
     pass
 

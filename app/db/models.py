@@ -64,3 +64,7 @@ class AgentAgreement(TimestampMixin, Base):
     tenant_passport = Column(String(50))
     tenant_budget = Column(String(50))
     tenant_contacted_agent = Column(Boolean)
+
+    # Agent A Signature
+    agent_a_signature = Column(String(255))
+    agent_b_signature = Column(String(255))
