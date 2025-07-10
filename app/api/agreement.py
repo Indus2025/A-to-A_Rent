@@ -21,7 +21,7 @@ class AgreementPDF(FPDF):
         self.set_font("Arial", size=10)  # Set default font
     
     def header(self):
-        self.image("uploads/indus.png", x=25, y=10, w=25)  # Smaller image, adjusted position
+        self.image("uploads/indus.png", x=25, y=5, w=25)  # Smaller image, adjusted position
         self.set_font("Arial", "B", 14)  # Slightly smaller title
         self.cell(0, 8, "AGENT TO AGENT AGREEMENT", ln=1, align="C")
         self.set_font("Arial", "", 9)  # Smaller subtitle
@@ -90,7 +90,7 @@ def generate_agreement(data: dict) -> str:
     # Header with date
     pdf.set_font("Arial", "", 9)  # Smaller date font
     pdf.cell(0, 5, f"Date: {data['dated']}", ln=1, align="R")
-    pdf.ln(8)  # Reduced spacing
+    pdf.ln(-5)  # Reduced spacing
     
     # PART 1: THE PARTIES
     pdf.section_title("PART 1 - THE PARTIES")
@@ -130,7 +130,7 @@ def generate_agreement(data: dict) -> str:
         "Description": data['property_description']
     }
     pdf.bordered_section("PROPERTY DETAILS", property_data)
-    pdf.ln(8)  # Reduced spacing
+    pdf.ln(16)  # Reduced spacing
     
     # PART 3: THE COMMISSION
     pdf.section_title("PART 3 - THE COMMISSION")
@@ -170,9 +170,21 @@ def generate_agreement(data: dict) -> str:
     
     # Signature lines with actual signatures
     pdf.set_font("Arial", "", 10)
-    pdf.cell(90, 20, f"Agent A: {data['agent_a_signature']}", 0, 0, "C")
-    pdf.cell(90, 20, f"Agent B: {data['agent_b_signature']}", 0, 1, "C")
-    
+    start_y = pdf.get_y()
+    pdf.cell(50, 10, f"Agent A: {data['agent_a_signature']}", 0, 0, "C")
+    # Stamp (positioned relative to signature)
+    pdf.image("uploads/stamp.png", x=30, y=start_y-5, w=40)
+
+    # Agent B Section - same approach
+    start_y = pdf.get_y() - 5  # Reset to align with Agent A section
+    pdf.cell(110, 10, f"Agent B: {data['agent_b_signature']}", 0, 1, "C")
+    # Move down for the "Signature & Stamp" label
+    pdf.ln(15)  # Adjust this value to position the text properly
+    pdf.cell(50, 10, "Signature & Stamp", 0, 0, "C")
+
+        # Move down for the "Signature & Stamp" label
+    # pdf.ln(15)  # Adjust this value to position the text properly
+    pdf.cell(115, 10, "Signature & Stamp", 0, 0, "C")
     # Save PDF
     os.makedirs("pdf_output", exist_ok=True)
     filename = f"pdf_output/agreement_{datetime.now().strftime('%Y%m%d_%H%M%S')}.pdf"
