@@ -1,8 +1,8 @@
-"""Initial Migration for A to A form complete variables
+"""new DB upgraded AWS mySQL
 
-Revision ID: 1b1fa51f2af5
+Revision ID: abaef3bc0f35
 Revises: 
-Create Date: 2025-06-30 14:37:52.567111
+Create Date: 2025-07-29 16:06:01.728997
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = '1b1fa51f2af5'
+revision: str = 'abaef3bc0f35'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
@@ -63,6 +63,8 @@ def upgrade() -> None:
     sa.Column('tenant_passport', sa.String(length=50), nullable=True),
     sa.Column('tenant_budget', sa.String(length=50), nullable=True),
     sa.Column('tenant_contacted_agent', sa.Boolean(), nullable=True),
+    sa.Column('agent_a_signature', sa.String(length=255), nullable=True),
+    sa.Column('agent_b_signature', sa.String(length=255), nullable=True),
     sa.Column('created_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=False),
     sa.Column('updated_at', sa.DateTime(timezone=True), server_default=sa.text('now()'), nullable=False),
     sa.PrimaryKeyConstraint('id')
