@@ -1,8 +1,8 @@
-"""new DB upgraded AWS mySQL
+"""single instance multiple DB
 
-Revision ID: abaef3bc0f35
+Revision ID: 15715a81664a
 Revises: 
-Create Date: 2025-07-29 16:06:01.728997
+Create Date: 2025-07-31 12:45:03.203391
 
 """
 from typing import Sequence, Union
@@ -12,7 +12,7 @@ import sqlalchemy as sa
 
 
 # revision identifiers, used by Alembic.
-revision: str = 'abaef3bc0f35'
+revision: str = '15715a81664a'
 down_revision: Union[str, None] = None
 branch_labels: Union[str, Sequence[str], None] = None
 depends_on: Union[str, Sequence[str], None] = None
